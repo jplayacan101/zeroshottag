@@ -506,15 +506,15 @@ def main():
     instances = get_training_instance(benchmark, args)
     if isinstance(instances, BenchmarkInstance):
         instances = [instances]
-    
+
     for instance in instances:
         output_root = Path(instance.output_base.parts[0])
         training_argv = find_digest_train_args(args.digest, output_root) + training_argv
         print("Arguments:", " ".join(training_argv))
-
+                                                       
         training_args = get_training_args(instance, training_argv, verbose=args.verbose)
         assert instance.training_digest
-
+                                                      
         if args.digest:
             tgt_output_dir = Path(training_args.output_dir).parent / args.digest
             os.makedirs(tgt_output_dir.parent, exist_ok=True)
@@ -532,7 +532,7 @@ def main():
                 
                 if not args.dry_run:
                     os.symlink(instance.training_digest, tgt_output_dir)
-
+         
         if output_dir_populated(training_args.output_dir):
             if not training_args.overwrite_output_dir:
                 print(f"output dir {training_args.output_dir} already exists. use --overwrite_output_dir to overwrite")

@@ -201,7 +201,7 @@ def run_retrieval(instance: BenchmarkInstance, args: Namespace) -> bool:
         target_featurize_fn = partial(featurize_fn, model_fn, data_collator)
         X = target_featurize_fn(dataset=X_data)
         assert isinstance(X, np.ndarray)
-        return X, X_indices
+        return X, X_indices 
 
     print_stage(f"Featurizing target [{instance.language}]")
     target_model_fn = lambda: instance.load_model(verbose=args.verbose).to(device)
@@ -264,6 +264,7 @@ def main():
     benchmark = XlingBenchmark.from_yaml(args.config)
     instances = benchmark.instances(args=args)
     if not instances:
+        print("dog")
         print("No instances found with filter:", args)
         exit(1)
 

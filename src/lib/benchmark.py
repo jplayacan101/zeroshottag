@@ -343,7 +343,8 @@ class BenchmarkTask(BenchmarkBase):
         train_split = cfg.pop("train_split", "train")
         validation_split = cfg.pop("validation_split", "validation")
         test_split = cfg.pop("test_split", "test")
-        metric = cfg.pop("metric", "accuracy")
+        # metric = cfg.pop("metric", "accuracy")
+        metric = cfg.pop("metric", "f1")
         minimize = cfg.pop("minimize", False)
 
         _ensure_empty_config(cls, cfg)
@@ -522,8 +523,9 @@ class BenchmarkInstance:
                 return AutoTokenizer.from_pretrained(custom_tokenizer_path)
 
         model_id = self.output_path if self._source_instance else self.model_id
-        tokenizer: PreTrainedTokenizerFast = AutoTokenizer.from_pretrained(model_id, add_prefix_space=True)
-
+        # tokenizer: PreTrainedTokenizerFast = AutoTokenizer.from_pretrained(model_id, add_prefix_space=True)
+        tokenizer: PreTrainedTokenizerFast = AutoTokenizer.from_pretrained(model_id, add_prefix_space=True, model_max_length=512)
+       
         if custom_tokenizer_path:
 
             def batch_iterator(batch_size=1000):

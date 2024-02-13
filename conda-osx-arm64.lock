@@ -158,7 +158,6 @@ https://conda.anaconda.org/conda-forge/osx-arm64/pyzmq-22.3.0-py39h02c6a76_1.tar
 https://conda.anaconda.org/conda-forge/osx-arm64/regex-2022.1.18-py39h5161555_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-arm64/setuptools-60.9.2-py39h2804cbe_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-arm64/shortuuid-1.0.8-py39h2804cbe_0.tar.bz2
-https://conda.anaconda.org/wietsedv/osx-arm64/tokenizers-0.10.3-py39hcb8d3e5_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-arm64/tornado-6.1-py39h5161555_2.tar.bz2
 https://conda.anaconda.org/conda-forge/noarch/tqdm-4.62.3-pyhd8ed1ab_0.tar.bz2
 https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.1.1-hd8ed1ab_0.tar.bz2
@@ -193,7 +192,6 @@ https://conda.anaconda.org/conda-forge/osx-arm64/matplotlib-base-3.5.1-py39h5aa4
 https://conda.anaconda.org/conda-forge/noarch/nbformat-5.1.3-pyhd8ed1ab_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-arm64/pandas-1.4.1-py39h7f752ed_0.tar.bz2
 https://conda.anaconda.org/conda-forge/noarch/pyopenssl-22.0.0-pyhd8ed1ab_0.tar.bz2
-https://conda.anaconda.org/wietsedv/osx-arm64/pytorch-1.9.0-py39_0.tar.bz2
 https://conda.anaconda.org/conda-forge/noarch/sacremoses-0.0.46-pyhd8ed1ab_0.tar.bz2
 https://conda.anaconda.org/conda-forge/osx-arm64/scipy-1.8.0-py39h5060c3b_1.tar.bz2
 https://conda.anaconda.org/conda-forge/noarch/wcwidth-0.2.5-pyh9f0ad1d_2.tar.bz2

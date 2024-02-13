@@ -180,7 +180,8 @@ def read_results(instances: List[BenchmarkInstance], args):
                     if res is None:
                         score = np.nan
                     else:
-                        score = METRIC_FN[instance.task.metric](*res) * 100
+                        # score = METRIC_FN[instance.task.metric](*res) * 100
+                        score = METRIC_FN[instance.task.metric](*res, average='weighted') * 100
                         if results_path:
                             with open(results_path, "w") as f:
                                 json.dump({instance.task.metric: score}, f)
@@ -222,6 +223,7 @@ def tabulate_results(results, model_types, args):
         elif args.pool == "std":
             agg_fn = np.std
         elif args.pool == "median":
+
             agg_fn = np.median
         else:
             raise ValueError
@@ -410,7 +412,6 @@ def main():
 
     not args.verbose or print("Aggregating results")
     results, model_types, suggestions = read_results(instances, args)
-
     headers, rows = tabulate_results(results, model_types, args)
     print(tabulate(rows, headers=headers, floatfmt=".1f"))
 
@@ -433,3 +434,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
